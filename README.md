@@ -1,4 +1,4 @@
-# Trilha Front-End Codifica
+# FrontLab Codifica
 
 Projeto desenvolvido para a atividade da Codifica Edu: construcao de um site simples com HTML, CSS e JavaScript.
 

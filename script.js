@@ -6,6 +6,7 @@ const cepInput = document.querySelector("#cep");
 const addressResult = document.querySelector("#addressResult");
 const menuToggle = document.querySelector("#menuToggle");
 const mainNav = document.querySelector("#mainNav");
+const siteHeader = document.querySelector(".site-header");
 
 function setMessage(element, text, isError = false) {
   if (!element) {
@@ -76,6 +77,17 @@ if (menuToggle && mainNav) {
     });
   });
 }
+
+function updateHeaderState() {
+  if (!siteHeader) {
+    return;
+  }
+
+  siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
+}
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState);
 
 if (cepInput) {
   cepInput.addEventListener("input", (event) => {

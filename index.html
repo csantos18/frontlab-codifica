@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trilha Front-End | Curso Online de Programacao</title>
+    <title>FrontLab Codifica | Landing Page HTML CSS JS</title>
     <meta
       name="description"
-      content="Landing page para inscricao na Trilha Front-End, com formulario, JavaScript e consulta ViaCEP."
+      content="Landing page do FrontLab Codifica para demonstrar HTML, CSS, JavaScript, formulario e consulta ViaCEP."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,9 +18,9 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#inicio" aria-label="Trilha Front-End - inicio">
-        <span class="brand-mark">TF</span>
-        <span>Trilha Front-End</span>
+      <a class="brand" href="#inicio" aria-label="FrontLab Codifica - inicio">
+        <span class="brand-mark">FL</span>
+        <span>FrontLab Codifica</span>
       </a>
 
       <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
@@ -31,7 +31,7 @@
 
       <nav id="mainNav" aria-label="Navegacao principal">
         <a href="#sobre">Sobre</a>
-        <a href="#inscricao">Inscricao</a>
+        <a href="#arquitetura">Arquitetura</a>
         <a href="#contato">Contato</a>
       </nav>
     </header>
@@ -39,66 +39,97 @@
     <main>
       <section class="hero" id="inicio">
         <div class="hero-content">
-          <p class="eyebrow">Codifica Edu</p>
-          <h1>Aprenda os primeiros passos da programacao web.</h1>
+          <p class="eyebrow">Atividade Codifica Edu</p>
+          <h1>Uma landing page moderna com HTML, CSS e JavaScript.</h1>
           <p class="hero-text">
-            Uma landing page criada com HTML, CSS e JavaScript para apresentar um curso introdutorio,
-            capturar interessados e consultar endereco pela API ViaCEP.
+            O FrontLab Codifica apresenta uma pagina responsiva com chamada para acao,
+            formulario de contato, validacao em JavaScript e consulta de endereco pela API ViaCEP.
           </p>
 
           <div class="hero-actions">
             <button class="button primary" id="ctaButton" type="button">Inscreva-se</button>
-            <a class="button secondary" href="#sobre">Saiba Mais</a>
+            <a class="button secondary" href="#arquitetura">Ver arquitetura</a>
           </div>
 
           <p class="status-message" id="ctaMessage" role="status" aria-live="polite"></p>
         </div>
 
-        <div class="hero-card" aria-label="Resumo do curso">
-          <span class="card-label">Proxima turma</span>
-          <strong>HTML, CSS e JS na pratica</strong>
-          <ul>
-            <li>Projeto simples e responsivo</li>
-            <li>Formulario com validacao</li>
-            <li>Consumo de API ViaCEP</li>
-          </ul>
+        <div class="interface-mockup" aria-label="Mockup de interface FrontLab Codifica">
+          <div class="mockup-topbar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-header">
+              <div>
+                <small>Projeto web</small>
+                <strong>HTML + CSS + JS</strong>
+              </div>
+              <span>API ativa</span>
+            </div>
+            <div class="mockup-grid">
+              <article>
+                <small>HTML</small>
+                <strong>5</strong>
+              </article>
+              <article>
+                <small>CSS</small>
+                <strong>5</strong>
+              </article>
+              <article>
+                <small>JS</small>
+                <strong>5</strong>
+              </article>
+            </div>
+            <div class="chart" aria-hidden="true">
+              <span style="height: 42%"></span>
+              <span style="height: 68%"></span>
+              <span style="height: 54%"></span>
+              <span style="height: 82%"></span>
+              <span style="height: 74%"></span>
+            </div>
+            <div class="code-panel">
+              <code>GET https://viacep.com.br/ws/01001000/json/</code>
+              <code>status: formulario_validado</code>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section about" id="sobre">
         <div>
           <p class="eyebrow">Sobre o projeto</p>
-          <h2>Uma pagina simples, objetiva e funcional.</h2>
+          <h2>Uma entrega academica simples, responsiva e funcional.</h2>
         </div>
         <p>
-          A Trilha Front-End simula uma pagina de inscricao para um curso de programacao web. O objetivo e
-          demonstrar estrutura HTML, estilo visual com CSS, interacoes com JavaScript e integracao
-          com uma API publica.
+          A pagina apresenta uma solucao profissional ficticia, mas funcional como entrega academica:
+          estrutura HTML, estilo responsivo com CSS, interacoes com JavaScript e integracao com API publica.
         </p>
       </section>
 
-      <section class="section features" aria-label="Diferenciais">
+      <section class="section features" id="arquitetura" aria-label="Arquitetura da pagina">
         <article>
           <span>01</span>
           <h3>HTML semantico</h3>
-          <p>Estrutura organizada com cabecalho, secoes principais e formulario acessivel.</p>
+          <p>Cabecalho, secoes, formulario e rodape organizados para leitura clara.</p>
         </article>
         <article>
           <span>02</span>
           <h3>CSS responsivo</h3>
-          <p>Layout adaptado para celular e desktop usando grid, flexbox e variaveis de cor.</p>
+          <p>Layout adaptado para celular, tablet e desktop com visual moderno.</p>
         </article>
         <article>
           <span>03</span>
-          <h3>JavaScript pratico</h3>
-          <p>Interacao no CTA, validacao simples do formulario e consulta de CEP com ViaCEP.</p>
+          <h3>API ViaCEP</h3>
+          <p>Consulta de endereco por CEP integrada ao formulario de contato.</p>
         </article>
       </section>
 
       <section class="section form-section" id="contato">
         <div class="form-copy" id="inscricao">
-          <p class="eyebrow">Inscricao</p>
-          <h2>Preencha seus dados para receber informacoes.</h2>
+          <p class="eyebrow">Demonstracao</p>
+          <h2>Preencha seus dados para solicitar contato.</h2>
           <p>
             Digite um CEP valido para buscar endereco automaticamente pela API ViaCEP. Os dados nao
             sao enviados para servidor; a acao acontece apenas no navegador.
@@ -106,19 +137,22 @@
         </div>
 
         <form class="contact-form" id="contactForm" novalidate>
-          <label>
-            Nome
-            <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" />
+          <label class="field">
+            <span class="field-icon" aria-hidden="true">N</span>
+            <input id="name" name="name" type="text" placeholder=" " autocomplete="name" />
+            <span class="field-label">Nome</span>
           </label>
 
-          <label>
-            E-mail
-            <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" />
+          <label class="field">
+            <span class="field-icon" aria-hidden="true">@</span>
+            <input id="email" name="email" type="email" placeholder=" " autocomplete="email" />
+            <span class="field-label">E-mail</span>
           </label>
 
-          <label>
-            CEP
-            <input id="cep" name="cep" type="text" placeholder="00000-000" maxlength="9" autocomplete="postal-code" />
+          <label class="field">
+            <span class="field-icon" aria-hidden="true">CEP</span>
+            <input id="cep" name="cep" type="text" placeholder=" " maxlength="9" autocomplete="postal-code" />
+            <span class="field-label">CEP</span>
           </label>
 
           <div class="address-box" id="addressBox">
@@ -126,9 +160,10 @@
             <span id="addressResult">Informe um CEP para consultar a API ViaCEP.</span>
           </div>
 
-          <label class="full">
-            Mensagem
-            <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem"></textarea>
+          <label class="field full">
+            <span class="field-icon" aria-hidden="true">M</span>
+            <textarea id="message" name="message" rows="5" placeholder=" "></textarea>
+            <span class="field-label">Mensagem</span>
           </label>
 
           <button class="button primary full" type="submit">Enviar mensagem</button>
@@ -138,7 +173,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>Trilha Front-End - Atividade Codifica Edu</p>
+      <p>FrontLab Codifica - Atividade Codifica Edu</p>
       <p>Desenvolvido com HTML, CSS e JavaScript.</p>
     </footer>
 
