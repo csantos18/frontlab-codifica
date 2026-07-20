@@ -550,13 +550,31 @@ h3 {
 
 .js-list li,
 .skills-list li {
-  border-left: 4px solid var(--primary);
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid rgba(37, 99, 235, 0.14);
   border-radius: 12px;
   background: var(--surface);
-  padding: 16px 18px;
+  padding: 14px 16px;
   color: var(--muted);
   font-weight: 600;
   box-shadow: 0 12px 28px rgba(20, 33, 61, 0.08);
+}
+
+.js-list li span,
+.skills-list li span {
+  display: inline-flex;
+  min-width: 44px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
 }
 
 .form-section {
