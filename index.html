@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trilha Front-End | Curso Online de Programacao</title>
+    <meta
+      name="description"
+      content="Landing page para inscricao na Trilha Front-End, com formulario, JavaScript e consulta ViaCEP."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Trilha Front-End - inicio">
+        <span class="brand-mark">TF</span>
+        <span>Trilha Front-End</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="mainNav" aria-label="Navegacao principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#inscricao">Inscricao</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-content">
+          <p class="eyebrow">Codifica Edu</p>
+          <h1>Aprenda os primeiros passos da programacao web.</h1>
+          <p class="hero-text">
+            Uma landing page criada com HTML, CSS e JavaScript para apresentar um curso introdutorio,
+            capturar interessados e consultar endereco pela API ViaCEP.
+          </p>
+
+          <div class="hero-actions">
+            <button class="button primary" id="ctaButton" type="button">Inscreva-se</button>
+            <a class="button secondary" href="#sobre">Saiba Mais</a>
+          </div>
+
+          <p class="status-message" id="ctaMessage" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="hero-card" aria-label="Resumo do curso">
+          <span class="card-label">Proxima turma</span>
+          <strong>HTML, CSS e JS na pratica</strong>
+          <ul>
+            <li>Projeto simples e responsivo</li>
+            <li>Formulario com validacao</li>
+            <li>Consumo de API ViaCEP</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section about" id="sobre">
+        <div>
+          <p class="eyebrow">Sobre o projeto</p>
+          <h2>Uma pagina simples, objetiva e funcional.</h2>
+        </div>
+        <p>
+          A Trilha Front-End simula uma pagina de inscricao para um curso de programacao web. O objetivo e
+          demonstrar estrutura HTML, estilo visual com CSS, interacoes com JavaScript e integracao
+          com uma API publica.
+        </p>
+      </section>
+
+      <section class="section features" aria-label="Diferenciais">
+        <article>
+          <span>01</span>
+          <h3>HTML semantico</h3>
+          <p>Estrutura organizada com cabecalho, secoes principais e formulario acessivel.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>CSS responsivo</h3>
+          <p>Layout adaptado para celular e desktop usando grid, flexbox e variaveis de cor.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>JavaScript pratico</h3>
+          <p>Interacao no CTA, validacao simples do formulario e consulta de CEP com ViaCEP.</p>
+        </article>
+      </section>
+
+      <section class="section form-section" id="inscricao">
+        <div class="form-copy">
+          <p class="eyebrow">Inscricao</p>
+          <h2>Preencha seus dados para receber informacoes.</h2>
+          <p>
+            Digite um CEP valido para buscar endereco automaticamente pela API ViaCEP. Os dados nao
+            sao enviados para servidor; a acao acontece apenas no navegador.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <label>
+            Nome
+            <input id="name" name="name" type="text" placeholder="Seu nome" autocomplete="name" />
+          </label>
+
+          <label>
+            E-mail
+            <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="email" />
+          </label>
+
+          <label>
+            CEP
+            <input id="cep" name="cep" type="text" placeholder="00000-000" maxlength="9" autocomplete="postal-code" />
+          </label>
+
+          <div class="address-box" id="addressBox">
+            <strong>Endereco consultado</strong>
+            <span id="addressResult">Informe um CEP para consultar a API ViaCEP.</span>
+          </div>
+
+          <label class="full">
+            Mensagem
+            <textarea id="message" name="message" rows="5" placeholder="Escreva sua mensagem"></textarea>
+          </label>
+
+          <button class="button primary full" type="submit">Enviar mensagem</button>
+          <p class="status-message full" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contato">
+      <p>Trilha Front-End - Atividade Codifica Edu</p>
+      <p>Desenvolvido com HTML, CSS e JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
