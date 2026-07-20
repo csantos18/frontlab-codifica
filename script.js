@@ -121,6 +121,6 @@ if (contactForm) {
 
     setMessage(formMessage, `Obrigado, ${name}! Sua mensagem foi registrada com sucesso.`);
     contactForm.reset();
-    setMessage(addressResult, "Informe um CEP para consultar a API ViaCEP.");
+    setMessage(addressResult, "Digite um CEP valido para preencher automaticamente.");
   });
 }

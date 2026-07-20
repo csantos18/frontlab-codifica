@@ -240,8 +240,8 @@ h3 {
 }
 
 .button:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: var(--shadow-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
 .primary {
@@ -259,7 +259,8 @@ h3 {
 }
 
 .status-message {
-  min-height: 24px;
+  min-height: 18px;
+  margin-bottom: 0;
   color: var(--success);
   font-weight: 800;
 }
@@ -569,6 +570,14 @@ textarea {
   transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
+input {
+  height: 58px;
+}
+
+textarea {
+  min-height: 132px;
+}
+
 input:focus,
 textarea:focus {
   border-color: var(--primary);
@@ -616,6 +625,8 @@ textarea:focus {
 .address-box {
   display: grid;
   gap: 6px;
+  min-height: 58px;
+  align-content: center;
   padding: 14px;
   box-shadow: none;
 }
