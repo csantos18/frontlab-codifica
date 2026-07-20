@@ -326,7 +326,7 @@ h3 {
 }
 
 .mockup-header small,
-.mockup-grid small {
+.stack-list small {
   display: block;
   color: var(--muted);
   font-size: 0.78rem;
@@ -349,43 +349,63 @@ h3 {
   font-weight: 800;
 }
 
-.mockup-grid {
+.stack-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 
-.mockup-grid article {
+.stack-list article {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.74);
   padding: 14px;
 }
 
-.mockup-grid strong {
-  display: block;
-  margin-top: 6px;
-  font-size: 1.25rem;
+.stack-list small {
+  flex: 1 0 100%;
 }
 
-.chart {
-  display: flex;
-  min-height: 150px;
-  align-items: end;
-  gap: 12px;
+.stack-list strong {
+  display: inline-flex;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.09);
+  color: var(--ink);
+  padding: 7px 10px;
+  font-size: 0.82rem;
+}
+
+.score-panel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.score-panel div {
   border: 1px solid var(--line);
   border-radius: 14px;
-  background:
-    linear-gradient(rgba(37, 99, 235, 0.08) 1px, transparent 1px),
-    #ffffff;
-  background-size: 100% 36px;
-  padding: 18px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  padding: 16px;
 }
 
-.chart span {
-  flex: 1;
-  border-radius: 10px 10px 4px 4px;
-  background: linear-gradient(180deg, var(--primary), var(--accent));
+.score-panel small,
+.score-panel span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.score-panel strong {
+  display: block;
+  margin: 7px 0 4px;
+  color: var(--primary);
+  font-size: 2rem;
+  line-height: 1;
 }
 
 .code-panel {
@@ -443,6 +463,77 @@ h3 {
 .features p {
   color: var(--muted);
   line-height: 1.65;
+}
+
+.flow-section,
+.tech-section,
+.js-section,
+.skills-section {
+  display: grid;
+  gap: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.flow-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flow-list li {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  padding: 18px 20px;
+  box-shadow: 0 14px 32px rgba(20, 33, 61, 0.08);
+  font-weight: 800;
+}
+
+.flow-list li:not(:last-child)::after {
+  position: absolute;
+  left: 24px;
+  bottom: -13px;
+  color: var(--primary);
+  content: "↓";
+  font-weight: 800;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-grid span {
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--ink);
+  padding: 10px 14px;
+  font-weight: 800;
+}
+
+.js-list,
+.skills-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.js-list li,
+.skills-list li {
+  border-left: 4px solid var(--primary);
+  border-radius: 12px;
+  background: var(--surface);
+  padding: 16px 18px;
+  color: var(--muted);
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(20, 33, 61, 0.08);
 }
 
 .form-section {
@@ -557,7 +648,11 @@ textarea:focus {
   }
 
   .about,
-  .form-section {
+  .form-section,
+  .flow-section,
+  .tech-section,
+  .js-section,
+  .skills-section {
     grid-template-columns: 0.85fr 1.15fr;
   }
 
@@ -671,7 +766,7 @@ textarea:focus {
     padding: 0;
   }
 
-  .mockup-grid {
+  .score-panel {
     grid-template-columns: 1fr;
   }
 
