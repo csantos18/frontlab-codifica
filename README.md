@@ -13,6 +13,23 @@ Projeto desenvolvido para a atividade da Codifica Edu: construcao de um site sim
 - Consumo da API ViaCEP para buscar endereco por CEP.
 - Paleta de cores harmoniosa e fontes apropriadas.
 
+## Funcionalidades
+
+- Landing page responsiva.
+- Validacao de formulario.
+- Consulta de CEP via API REST.
+- Manipulacao do DOM.
+- Mensagens dinamicas.
+- Layout adaptavel para desktop, tablet e mobile.
+
+## Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript ES6
+- Fetch API
+- ViaCEP
+
 ## Como executar
 
 Abra o arquivo `index.html` no navegador.
