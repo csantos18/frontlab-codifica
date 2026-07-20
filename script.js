@@ -8,6 +8,10 @@ const menuToggle = document.querySelector("#menuToggle");
 const mainNav = document.querySelector("#mainNav");
 
 function setMessage(element, text, isError = false) {
+  if (!element) {
+    return;
+  }
+
   element.textContent = text;
   element.classList.toggle("error", isError);
 }
@@ -52,46 +56,59 @@ async function searchCep(cep) {
   }
 }
 
-ctaButton.addEventListener("click", () => {
-  document.querySelector("#inscricao").scrollIntoView({ behavior: "smooth" });
-  setMessage(ctaMessage, "Obrigado pelo interesse! Preencha o formulario para receber informacoes.");
-});
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = mainNav.classList.toggle("is-open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
-
-mainNav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mainNav.classList.remove("is-open");
-    menuToggle.setAttribute("aria-expanded", "false");
+if (ctaButton) {
+  ctaButton.addEventListener("click", () => {
+    document.querySelector("#inscricao").scrollIntoView({ behavior: "smooth" });
+    setMessage(ctaMessage, "Obrigado pelo interesse! Preencha o formulario para receber informacoes.");
   });
-});
+}
 
-cepInput.addEventListener("input", (event) => {
-  event.target.value = formatCep(event.target.value);
-});
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("is-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
 
-cepInput.addEventListener("blur", (event) => {
-  if (event.target.value.trim()) {
-    searchCep(event.target.value);
-  }
-});
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("is-open");
+      menuToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (cepInput) {
+  cepInput.addEventListener("input", (event) => {
+    event.target.value = formatCep(event.target.value);
+  });
 
-  const name = document.querySelector("#name").value.trim();
-  const email = document.querySelector("#email").value.trim();
-  const message = document.querySelector("#message").value.trim();
+  cepInput.addEventListener("blur", (event) => {
+    if (event.target.value.trim()) {
+      searchCep(event.target.value);
+    }
+  });
+}
 
-  if (!name || !email || !message) {
-    setMessage(formMessage, "Preencha nome, e-mail e mensagem antes de enviar.", true);
-    return;
-  }
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-  setMessage(formMessage, `Obrigado, ${name}! Sua mensagem foi registrada com sucesso.`);
-  contactForm.reset();
-  setMessage(addressResult, "Informe um CEP para consultar a API ViaCEP.");
-});
+    const name = document.querySelector("#name").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const message = document.querySelector("#message").value.trim();
+
+    if (!name || !email || !message) {
+      setMessage(formMessage, "Preencha nome, e-mail e mensagem antes de enviar.", true);
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setMessage(formMessage, "Informe um e-mail valido para contato.", true);
+      return;
+    }
+
+    setMessage(formMessage, `Obrigado, ${name}! Sua mensagem foi registrada com sucesso.`);
+    contactForm.reset();
+    setMessage(addressResult, "Informe um CEP para consultar a API ViaCEP.");
+  });
+}
