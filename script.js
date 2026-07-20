@@ -35,7 +35,7 @@ async function searchCep(cep) {
   const cleanCep = onlyNumbers(cep);
 
   if (cleanCep.length !== 8) {
-    setMessage(addressResult, "Digite um CEP com 8 numeros.", true);
+    setMessage(addressResult, "Digite um CEP com 8 números.", true);
     return;
   }
 
@@ -46,21 +46,21 @@ async function searchCep(cep) {
     const data = await response.json();
 
     if (data.erro) {
-      setMessage(addressResult, "CEP nao encontrado. Verifique o numero informado.", true);
+      setMessage(addressResult, "CEP não encontrado. Verifique o número informado.", true);
       return;
     }
 
-    const address = `${data.logradouro || "Logradouro nao informado"}, ${data.bairro || "bairro nao informado"} - ${data.localidade}/${data.uf}`;
+    const address = `${data.logradouro || "Logradouro não informado"}, ${data.bairro || "bairro não informado"} - ${data.localidade}/${data.uf}`;
     setMessage(addressResult, address);
   } catch {
-    setMessage(addressResult, "Nao foi possivel consultar o CEP agora.", true);
+    setMessage(addressResult, "Não foi possível consultar o CEP agora.", true);
   }
 }
 
 if (ctaButton) {
   ctaButton.addEventListener("click", () => {
     document.querySelector("#inscricao").scrollIntoView({ behavior: "smooth" });
-    setMessage(ctaMessage, "Obrigado pelo interesse! Preencha o formulario para receber informacoes.");
+    setMessage(ctaMessage, "Obrigado pelo interesse! Preencha o formulário para receber informações.");
   });
 }
 
@@ -115,12 +115,12 @@ if (contactForm) {
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setMessage(formMessage, "Informe um e-mail valido para contato.", true);
+      setMessage(formMessage, "Informe um e-mail válido para contato.", true);
       return;
     }
 
     setMessage(formMessage, `Obrigado, ${name}! Sua mensagem foi registrada com sucesso.`);
     contactForm.reset();
-    setMessage(addressResult, "Digite um CEP valido para preencher automaticamente.");
+    setMessage(addressResult, "Digite um CEP válido para preencher automaticamente.");
   });
 }

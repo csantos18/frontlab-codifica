@@ -1,25 +1,25 @@
 # FrontLab Codifica
 
-Projeto desenvolvido para a atividade da Codifica Edu: construcao de um site simples com HTML, CSS e JavaScript.
+Projeto desenvolvido para a atividade da Codifica Edu: construção de um site simples com HTML, CSS e JavaScript.
 
 ## Requisitos atendidos
 
-- Repositorio Git configurado.
+- Repositório Git configurado.
 - Branch principal `main`.
 - Branch de desenvolvimento `develop`.
-- Landing page com cabecalho, slogan e botao de chamada para acao.
-- Secao sobre/contato com formulario de nome, e-mail e mensagem.
-- Acao em JavaScript no botao de chamada para acao.
-- Consumo da API ViaCEP para buscar endereco por CEP.
+- Landing page com cabeçalho, slogan e botão de chamada para ação.
+- Seção sobre/contato com formulário de nome, e-mail e mensagem.
+- Ação em JavaScript no botão de chamada para ação.
+- Consumo da API ViaCEP para buscar endereço por CEP.
 - Paleta de cores harmoniosa e fontes apropriadas.
 
 ## Funcionalidades
 
 - Landing page responsiva.
-- Validacao de formulario.
+- Validação de formulário.
 - Consulta de CEP via API REST.
-- Manipulacao do DOM.
-- Mensagens dinamicas.
+- Manipulação do DOM.
+- Mensagens dinâmicas.
 - Layout adaptavel para desktop, tablet e mobile.
 
 ## Tecnologias
@@ -34,4 +34,4 @@ Projeto desenvolvido para a atividade da Codifica Edu: construcao de um site sim
 
 Abra o arquivo `index.html` no navegador.
 
-Tambem e possivel usar uma extensao como Live Server no VS Code.
+Também é possível usar uma extensão como Live Server no VS Code.
