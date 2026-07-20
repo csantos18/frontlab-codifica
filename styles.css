@@ -405,7 +405,7 @@ h3 {
   display: block;
   margin: 7px 0 4px;
   color: var(--primary);
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 3vw, 2rem);
   line-height: 1;
 }
 
@@ -485,6 +485,9 @@ h3 {
 
 .flow-list li {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface);
@@ -493,9 +496,22 @@ h3 {
   font-weight: 800;
 }
 
+.flow-list li span {
+  display: inline-flex;
+  min-width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
 .flow-list li:not(:last-child)::after {
   position: absolute;
-  left: 24px;
+  left: 34px;
   bottom: -13px;
   color: var(--primary);
   content: "↓";
@@ -503,18 +519,23 @@ h3 {
 }
 
 .tech-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
   gap: 12px;
 }
 
 .tech-grid span {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(37, 99, 235, 0.18);
   border-radius: 999px;
   background: rgba(37, 99, 235, 0.08);
   color: var(--ink);
   padding: 10px 14px;
   font-weight: 800;
+  text-align: center;
 }
 
 .js-list,
